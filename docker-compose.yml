@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  template-project:
+    build:
+      context: .
+      args:
+        APP_NAME: template
+        APP_VERSION: 0.1.0
+    image: template_rest_api
+
+
