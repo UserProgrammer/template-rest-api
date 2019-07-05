@@ -8,5 +8,8 @@ services:
         APP_NAME: template
         APP_VERSION: 0.1.0
     image: template_rest_api
+    ports:
+      - "8080:8080"
+
 
 

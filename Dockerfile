@@ -1,4 +1,7 @@
 FROM openjdk:8
 
-COPY target/${APP_NAME}-${APP_VERSION}-SNAPSHOT.jar /app/app.jar
+ARG APP_NAME
+ARG APP_VERSION
+
+COPY target/${APP_NAME}-${APP_VERSION}.jar /app/app.jar
 CMD java -jar /app/app.jar
