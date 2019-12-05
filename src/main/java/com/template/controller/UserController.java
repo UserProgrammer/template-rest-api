@@ -2,6 +2,7 @@ package com.template.controller;
 
 import com.template.entity.User;
 import com.template.handler.UserHandler;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,7 @@ public class UserController {
     return new ResponseEntity<>(user, HttpStatus.OK);
   }
 
+  @Autowired
   public void setUserHandler(UserHandler userHandler) {
     this.userHandler = userHandler;
   }
