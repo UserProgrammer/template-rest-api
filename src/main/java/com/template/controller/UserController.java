@@ -20,6 +20,11 @@ public class UserController {
     return new ResponseEntity<>(user, HttpStatus.OK);
   }
 
+  @GetMapping(path = "/login")
+  public HttpEntity<String> login() {
+    return new ResponseEntity<>("Successfully logged in!", HttpStatus.OK);
+  }
+
   @Autowired
   public void setUserHandler(UserHandler userHandler) {
     this.userHandler = userHandler;

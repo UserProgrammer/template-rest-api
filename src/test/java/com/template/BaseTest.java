@@ -10,4 +10,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 public class BaseTest {
   @LocalServerPort
   protected int port;
+
+  protected void print(Object o) {
+    System.out.println(o);
+  }
 }
