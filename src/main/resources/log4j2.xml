@@ -2,13 +2,13 @@
 
 <configuration>
   <appenders>
-    <console name="consle" target="SYSTEM_OUT">
+    <console name="console" target="SYSTEM_OUT">
       <patternLayout pattern="%d{HH:mm:ss.SSS [%t] %-5level %logger{36} - %msg%n"/>
     </console>
   </appenders>
 
   <loggers>
-    <root level="warn">
+    <root level="debug">
       <appender-ref ref="console" />
     </root>
   </loggers>

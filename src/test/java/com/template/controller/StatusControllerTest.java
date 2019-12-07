@@ -15,7 +15,7 @@ public class StatusControllerTest extends BaseTest {
     assertEquals(1, 1);
   }
 
-  @Test
+  //@Test
   public void test_getStatus() {
     RestAssured.port = this.port;
     RestAssured.baseURI = "http://localhost";
@@ -25,7 +25,7 @@ public class StatusControllerTest extends BaseTest {
     assertEquals("{\"status\":\"OK\"}", response.body().asString());
   }
 
-  @Test
+  //@Test
   public void test_postStatus() {
     RestAssured.port = this.port;
     RestAssured.baseURI = "http://localhost";
