@@ -19,10 +19,11 @@ public class CsrfTokenResponseHeaderBindingFilter extends OncePerRequestFilter {
 
   @Override
   protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-    response.addHeader(CSRF_TOKEN_NAME, csrfTokenRepository.loadToken(request).getToken());
+    // TODO: Since the CustomCsrfAuthenticationStrategy will always override the value of this header, I should be able to get rid of this if statement.
+    if (response.getHeader("x-csrf-token") == null) {
+      response.addHeader(CSRF_TOKEN_NAME, csrfTokenRepository.loadToken(request).getToken());
+    }
 
-    System.out.println("shoop: " + csrfTokenRepository.loadToken(request).getToken());
     filterChain.doFilter(request, response);
-    System.out.println("shap: " + csrfTokenRepository.loadToken(request).getToken());
   }
 }

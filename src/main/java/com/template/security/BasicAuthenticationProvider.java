@@ -27,6 +27,6 @@ public class BasicAuthenticationProvider implements AuthenticationProvider {
 
   @Override
   public boolean supports(Class<?> aClass) {
-    return BasicAuthenticationToken.class.equals(aClass);
+    return UsernamePasswordAuthenticationToken.class.equals(aClass);
   }
 }
